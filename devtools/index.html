@@ -9,7 +9,9 @@
   <body>
     <article>
       <section data-bespoke-backdrop="emphatic" class="emphatic-text">
-        <iframe width="640" height="390" src="https://www.youtube.com/embed/85glp7izxaM" frameborder="0" allowfullscreen></iframe>
+        <h2>Nouran Mahmoud Marouf</h2>
+        <h3>Front-End Engineer at <a href="http://ta3rifah.com/">Tarifah</a></h3>
+        <h4>CATreloaded member and ex-Cloud9ers</h4>
       </section>
       <section>
         <h1>A JOURNEY THROUGH CHROME DEVTOOLS</h1>
@@ -19,27 +21,21 @@
         <h4>What?, Why?, How?</h4>
       </section>
       <section>
-        <h2>What?</h2>
-        <p>
-          A set of tools allowing developers and programmers deep access into the 
-          internal of the browser and authoring and debugging web applications. 
-          The Developer Tools are part of the open source Webkit project.  (what's webkit project)
-        </p>
+        <h1>What?</h1>
+        <p>A set of web authoring and debugging tools built into Google Chrome.</p>
       </section>
       <section>
-        <h2>Why?</h2>
-        <p>
-          It will make you a productive developer. As a web developer or programmar you will gain a lot of facilities from
-          knowing/using DevTools, you will be able to find the bugs quickly and know how to keep your Apps efficient and running
-          as fast as possible.
-        </p>
+        <h1>Why?</h1>
+        <ul>
+          <li>Productive/professional developer</li>
+          <li>Find bugs quickly</li>
+          <li>Live editing of HTML, CSS, JS</li>
+          <li>performance tracking</li>
+        </ul>
       </section>
       <section>
-        <h2>How?</h2>
-        <p>
-          Just install Google Chrome browser. Congrats, No more downloads/effort.
-          <br><br> You've three ways to open it:-
-        </p>
+        <h1>How?</h1>
+        <p>Just install Google Chrome browser.</p><br><br>
         <ul>
           <li>shift+ctrl+i</li>
           <li>Right-click &gt; Inspect Element</li>
@@ -48,96 +44,93 @@
         </ul>
       </section>
       <section>
-        <h2>Jounrey program</h2>
-        <h6>you are gonna learn about:-</h6><br>
+        <h2>Chrome Canary version</h2>
         <ul>
-          <li>Dive into the hight-level structure of the browers</li>
-          <li>Use Tools</li>
-          <li>Have a look at some cool DevTools features</li>
-          <li>Performance and profiling</li>
+          <li>The newest of Chrome features</li>
+          <li>gets new features every day</li>
+          <li>Designed for developers and early adopters </li>
+          <li>Prone to breakage!</li>
         </ul>
       </section>
       <section>
-        <h2>Chrome Canary version</h2>
-        <p>
-          It has the newest of Chrome features. It changes and gets new features almost every day.
-          Designed for developers and early adopters and can be prone to breakage!.
-        </p>
+        <h2>Journey program</h2><br>
+        <ul>
+          <li>Dive into the high-level structure of the browers</li>
+          <li>Use Tools</li>
+          <li>Have a look at some cool DevTools features</li>
+        </ul>
       </section>
       <section>
-        <h2>Dive into the hight-level structure of the browers</h2>
-        <h3>what happens when you type "google.com" in the address bar untill you see the google page</h3>
-        <p>After a request got fired and a response got recieved ...</p>
+        <h2>Dive into the high-level structure of the browers</h2><br><br>
+        <p>What happens after getting a response!!</p><img src="images/gifs/manthinking.png" width="100" height="200">
       </section>
       <section>
         <h2>Browser hight-level structure</h2>
         <ul>
-          <li><strong> The user interface:</strong>  includes every part of the browser except the main window where you see the requested page.</li>
-          <li><strong>The browser engine:</strong> the interface for querying and manipulating the rendering engine.</li>
-          <li>
-            <strong>The rendering engine:</strong> requesting for displaying/parsing the requested content, Ex:- if the requested content is HTML,
-            it is responsible for parsing HTML and CSS and displaying the parsed content in the screen
-          </li>
-          <li><strong>Networking:</strong> responsible for networks calls, like HTTP requests</li>
-          <li><strong>UI backend:</strong> used for drawing basic widgets like combo boxes and windows. Underneath it uses the operating system user interface methods.</li>
-          <li><strong>JavaScript interpreter:</strong> Used to parse and execute the JavaScript code.</li>
-          <li><strong>Data storage:</strong> This is a persistence layer. The browser needs to save all sorts of data on the hard disk, for examples, cookies.</li>
+          <li><strong> The user interface:</strong> Address bar, back/forward button, bookmarking menu etc.</li>
+          <li><strong>The browser engine:</strong> The interface for querying and manipulating the rendering engine.</li>
+          <li><strong>The rendering engine:</strong> Displaying/parsing the requested content.</li>
+          <li><strong>Networking:</strong> Responsible for networks calls, like HTTP requests</li>
+          <li><strong>UI backend:</strong> Used for painting/drawing basic widgets on the screen.</li>
+          <li><strong>JavaScript interpreter:</strong> Parse and execute the JavaScript code.</li>
+          <li><strong>Data storage:</strong> Persistence layer for saving all sorts of data on the hard disk, EX:- cookies.</li>
         </ul>
       </section>
-      <section><img src="./images/layers.png">
-        <p class="al mtl"><strong> Note: </strong> Unlike most browsers,Chrome holds multiple instances of the rendering engine - one for each tab. Each tab is a separate process.</p>
-      </section>
+      <section><img src="images/layers.png"></section>
       <section>
         <h2>Rendering Engine</h2>
-        <p>When a response delivered to the browser through the network layer, it starts its tour through the render engine.  </p>
+        <p>After a response delivered to the browser through the network layer, it starts its tour through the render engine.  </p>
         <ol>
-          <li>Parse HTML to construct DOM nodes <strong>(content tree)</strong> (What's DOM?)</li>
-          <li>Parse external CSS and in style elements + html to traverse to <strong> Render tree </strong></li>
+          <li>HTML (DOM) + Parse CSS (CSSOM) to generate to <strong> Render tree </strong></li>
           <li>Render tree contains elements as rectangles in right order to be displayed.</li>
-          <li>Goes through layout processing, giving the element the real coordinates where it should appear on the screen.</li>
-          <li>Then it will go through painting whereas each node will be painted using the UI backend layer.</li>
+          <li><strong>Layout processing </strong>, giving the element the real coordinates.</li>
+          <li>Painting elements on pixels using the UI backend layer.</li>
         </ol>
       </section>
-      <section><img src="images/flow.png" height="100px" width="500px"><br><br><img src="images/webkitflow.png" height="200px"></section>
+      <section><img src="images/flow.png" height="100px" width="500px" class="border"><br><img src="images/webkitflow.png" width="500px" height="200px" class="border"><br>
+        <p>Rendering engine basic flow.</p>
+      </section>
       <section>
         <h2>Use Tools</h2>
-        <p>Overall, there are eight main groups of tools available via Developer Tools.</p>
-        <p>Elements, Networks, Sources, Timeline, Profiles, Resources, Audits and Console.</p>
-        <h6><strong>Note:</strong> may be you see different tools as tools get changed during versions, but not significant change.</h6>
       </section>
       <section>
         <h3>The Elements tool:</h3>
         <p>
-          Allows you to see the web page as the browser sees it.
-          That is, using the Elements tool, 
-          you can see the raw HTML, raw CSS styles, 
-          the Document Object Model, and manipulate either in real time.
+          Allows you to see the raw HTML, raw CSS styles, the Document Object Model
+          and manipulate either in real time
         </p><br><br><img src="images/elementtool.png" width="600px">
       </section>
       <section>
         <h3>The Networks tool:</h3>
         <p>
-          Use the Resources tool to learn what components your web page
-          or application is requesting from web servers, how long these requests take,
-          and how much bandwidth is required. You can also view the HTTP request and response headers for each of your resources. 
-          The Resources tool is perfect for helping you speed up page load times.
+          What components your web page
+          is requesting from web servers, how long these requests take,
+          and how much bandwidth is required. 
+          You can also view the HTTP request and response headers for each of your resources. 
         </p><br><br><img src="images/networktool.png" width="600px">
       </section>
       <section>
         <h3>The Sources tool:</h3>
         <p>
           To peer inside the JavaScript for a page, 
-          you will use the Scripts tool. Here you can find a list of scripts
-          required by the page plus a full featured script debugger.
-          You can even change the JavaScript on the fly!
-        </p><br><br><img src="images/resourcestool.png" width="600px">
+          A list of loaded scripts,
+          Full featured script debugger,
+          Change the JavaScript on the fly!
+        </p><br><br><img src="images/sourcestool.png" width="600px">
+      </section>
+      <section>
+        <h2>Timeline tool</h2>
+        <ul>
+          <li></li>
+          <li><img src="images/colors.png" width="600px"></li>
+        </ul><img src="images/timelinetool.png" width="600px">
       </section>
       <section>
         <h3>The Profiles tool:</h3>
         <p>
           The Profiles tool helps you capture and analyze the performance of 
           JavaScript scripts. For example, you can learn which functions
-          take the most time to execute and zero in on exactly where to optimize.
+          take the most time to execute and zoom in on exactly where to optimize.
         </p><br><br><img src="images/profilestool.png" width="600px">
       </section>
       <section>
@@ -152,23 +145,24 @@
       <section>
         <h3>The Audit tool:</h3>
         <p>
-          The Audit tool is like having your own web optimization consultant sitting
-          next to you. This tool can analyze a page as it loads and provide suggestions
-          and optimizations for decreasing page load time and
-          increase perceived (and real) responsiveness. 
+          The Audit tool is web optimization consultant sitting. 
+          Analyze a page as it loads and Provide suggestions
+          and optimizations for decreasing page load time.
         </p><br><br><img src="images/audittool.png" width="600px">
       </section>
       <section>
         <h3>The Console tool:</h3>
         <p>
-          Last but definitely not least, the Developer Tools offers a full featured Console.
-          From the Console, you can <strong>interact with your app's views and scripts </strong>, <strong>run javascript commands</strong> 
+          Last but definitely not least, A full featured Console.
+          You can <strong>interact with your app's views and scripts </strong>, <strong>run javascript commands</strong> 
           and <strong>view log output</strong>.
         </p><br><br><img src="images/consoletool.png" width="600px">
       </section>
       <section>
-        <h2>Have a look at some cool DevTools features</h2>
-        <h6>tips and tricks</h6>
+        <h1>
+          Have a look at some cool DevTools features
+          <small>(tips and tricks)</small>
+        </h1>
       </section>
       <section>
         <h2>Quick file switching</h2>
@@ -229,56 +223,11 @@
       <section>
         <h2>Editing local files through workspaces</h2>
         <p>
-          Workspaces are a powerful Chrome DevTools feature,
-          which turns it into a real IDE. Workspaces match
+          Workspace is a real IDE. Workspaces match
           the files in the Sources tab to your local project files,
           so now you can edit and save directly, without having to
           copy/paste your changes into an external text editor.
         </p>
-      </section>
-      <section>
-        <h2>Timeline and profiles </h2>
-        <p>
-          Being aware of how to measure and improve performance
-          can be a useful skill and in this short post,
-          I'll give you a quick refresher on how this can be
-          done with the Chrome DevTools Timeline and Profiles.
-        </p>
-      </section>
-      <section>
-        <h2>Timeline</h2>
-        <p>
-          The Timeline panel provides an overview of where time
-          is spent loading up your web application such as how
-          long it takes to <strong>process DOM events </strong>, <strong>render page layouts </strong>
-          or <strong>paint elements to the screen </strong>. it allows you to track
-          frames per second and each frame what work was involved.
-        </p>
-      </section>
-      <section>
-        <h3>Summary view</h3>
-        <p>displays horizontal bars representing</p><br><br>
-        <ul>
-          <li><strong>HTML parsing (blue)</strong></li>
-          <li><strong>JavaScript (yellow)</strong>,</li>
-          <li><strong>Style recalculation and layout (purple) </strong></li>
-          <li><strong>Painting and compositing (green)</strong></li>
-        </ul>
-      </section>
-      <section>
-        <h3>Details view</h3>
-        <p>Includes detailed records for these categories after a session has been recorded.</p><br><br>
-        <ul>
-          <li><strong>Name: </strong> The name of the function.</li>
-          <li><strong>Self Time: </strong> How long it took to complete the current invocation of the function, including only the statements in the function itself, not including any functions that it called.</li>
-          <li><strong>Total Time:</strong> The time it took to complete the current invocation of this function and any functions that it called.</li>
-        </ul>
-      </section>
-      <section><img src="images/timeline.png" width="600px"></section>
-      <section>
-        <p><strong>Frame rate:</strong> Consider it as the number of images that get rendered on your screen per second.</p><br><br>
-        <p><strong>Frames view: </strong> Tells you when and where your frame rate is starting to saffer.</p><br><br>
-        <p><strong>CPU profiler</strong> Shows us which part of our JS are slowing the page down</p><img src="images/cpuprofiler.png" width="600px">
       </section>
       <section data-bespoke-backdrop="emphatic" class="emphatic-text">
         <h1>Lets see it in action ;)</h1>
