@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>Frontend Testing</title>
+    <link rel="stylesheet" type="text/css" href="build/build.css">
+  </head>
+  <body>
+    <article>
+      <section>
+        <h1>Frontend Testing</h1>
+      </section>
+      <section>
+        <h2>Frontend Testing become a MUST</h2><br>
+        <ul>
+          <li>Frontend development has drastically shifted into a more complex environment.</li>
+        </ul>
+      </section>
+      <section><img src="images/evolutionOfJS.jpg"></section>
+      <section>
+        <p>Enhance developer productivity by catching errors immediately.</p><img src="http://i.imgur.com/Ieo6ddj.gif">
+      </section>
+      <section>
+        <p>Reduce the number of <b>“Why isn’t this working?”</b> phone calls and emails on Friday night.</p><img src="images/customer.jpg" width="400">
+      </section>
+      <section>
+        <p>Helpful documentation complement</p>
+      </section>
+      <section>
+        <p>While your particular application may not need to take advantage of every type of testing that exists, it’s important to know the options that are out there, what they are used for, and when it’s appropriate to use each one. You should feel comfortable assessing which testing strategies fit best with your team and codebases.</p>
+      </section>
+      <section>
+        <h2>Automated Testing Strategies</h2>
+      </section>
+      <section>
+        <h2>Unit Test </h2><br>
+        <ul>
+          <li>Think of it as <bold>‘do one thing well’</bold> mantra</li>
+          <li>It is making sure individual sets of code are working as intended before building the larger feature.</li>
+          <li>A test suite – a grouping of tests related to a particular area of the application.</li>
+          <li>it enables you to to run suites on their own. If you’re working on a new feature for an application, you don’t want to run every test during active development, as that would be very time consuming.</li>
+          <li>Using the it function, we write the feature or piece of functionality we are testing.</li>
+          <li>pure functions, Mocks (data assertions) ,and Stubs (functions return).</li>
+        </ul>
+      </section>
+      <section>
+        <h2>Example</h2>
+        <pre><code class="language-javascript">describe("Calculator Operations", function () {
+  it("Should add two numbers", function () {
+    Calculator.init();
+    var result = Calculator.addNumbers(7,3);
+    expect(result).toBe(10);
+  });
+});
+
+</code></pre>
+      </section>
+      <section>
+        <h2>Let’s Tool Up</h2>
+        <ul>
+          <li>Jasminejs</li>
+          <li>Mochajs</li>
+        </ul>
+      </section>
+      <section>
+        <h2>Integration Test <small>(REST API testing)</small></h2><br>
+        <ul>
+          <li>Integration test is the phase in software testing in which individual software modules are combined and tested as a group.</li>
+        </ul>
+      </section>
+      <section>
+        <h2>Example</h2>
+        <pre><code class="language-javascript">var frisby = require('frisby');
+frisby.create('Get Brightbit Twitter feed')
+  .get('https://api.twitter.com/1/statuses/user_timeline.json?screen_name=brightbit')
+  .expectStatus(200)
+  .expectHeaderContains('content-type', 'application/json')
+  .expectJSON('0', {
+    place: function(val) { expect(val).toMatchOrBeNull("Oklahoma City, OK"); }, // Custom matcher callback
+    user: {
+      verified: false,
+      location: "Oklahoma City, OK",
+      url: "http://brightb.it"
+    }
+  })
+.toss();
+
+</code></pre>
+      </section>
+      <section>
+        <h2>Tools</h2>
+        <ul>
+          <li>Jasmine-frisby</li>
+          <li>Mocha + chai</li>
+          <li>hippie</li>
+          <li>Chakram</li>
+        </ul>
+      </section>
+      <section>
+        <h2>End-to-End Test/ Smoking Test/</h2>
+        <h6>Back Box Test / Acceptance tests / validation testing / Functional testing</h6><br>
+        <ul>
+          <li>Just because all the pieces are accounted for doesn’t mean that the instructions are properly executable and will allow you to build the final model. </li>
+          <li>tests go through your running application and ensure designated actions, user inputs and user flows are completable and functioning</li>
+          <li> we’re testing to see if a particular workflow (a sign-up flow) behaves as expected when we fill in some bad information.</li>
+          <li> How does your user interact with your website, and what is the expected outcome of that interaction?</li>
+        </ul>
+      </section>
+      <section>
+        <h2>Example</h2>
+        <pre><code class="language-javascript">describe("Sign Up Failure state", function () {
+  it("Shouldn't allow signup with invalid information", function () {
+    var page = visit("/home");
+    page.fill_in("input[name='email']", "Not An Email");
+    page.click("button[type=submit]");
+    page.click("button[type=submit]");
+    expect(page.find("#signupError").hasClass("hidden")).toBeFalsy();
+  });
+});
+</code></pre>
+      </section>
+      <section>
+        <h2>Example</h2>
+        <h6>(cucumber-mink features)</h6>
+        <pre><code class="language-javascript">Feature: Post page
+
+Background:
+  Given I browse "http://my-app:3000/"
+  
+Scenario: Go on post 1
+  Given I am on homepage
+  When I follow "Post-1"
+  Then I should be on "/post/1"
+  And I should see "Post-1"
+  </code></pre>
+      </section>
+      <section>
+        <h2>Tools</h2><br>
+        <ul>
+          <li>Cucumberjs + Cucumber Mink</li>
+          <li>Pioneerjs</li>
+          <li>cypress.io</li>
+        </ul>
+      </section>
+      <section>
+        <h2>Monkey Testing</h2>
+        <p>monkey testing is a technique where the user tests the application or system by providing random inputs and checking the behavior, or seeing whether the application or system will crash. </p>
+      </section>
+      <section>
+        <h2>Example</h2><p data-height="265" data-theme-id="0" data-slug-hash="NbKazb" data-default-tab="html,result" data-user="aliciasedlock" data-embed-version="2" data-pen-title="Focus components with Gremlins.js" class="codepen">See the Pen <a href="https://codepen.io/aliciasedlock/pen/NbKazb/">Focus components with Gremlins.js</a> by Alicia Sedlock (<a href="http://codepen.io/aliciasedlock">@aliciasedlock</a>) on <a href="http://codepen.io">CodePen</a>.</p>
+        <script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
+      </section>
+      <section>
+        <h2>Example</h2><img src="https://camo.githubusercontent.com/130e101ee69d4d9b6f065df0a0404c861eb5ce18/687474703a2f2f7374617469632e6d61726d656c61622e636f6d2f746f646f2e676966">
+      </section>
+      <section>
+        <h2>Tools</h2><br>
+        <ul>
+          <li>Gremlins.js</li>
+        </ul>
+      </section>
+      <section>
+        <h2>Visual Regression <small>find differences game</small></h2>
+        <h3 class="bullet"></h3>
+        <ul>
+          <li> This doesn’t test your code, but rather compares the rendered result of your code – your interface – with the rendered version of your application in production, staging, or a pre-changed local environment. </li>
+          <li>Image comparison tools then detect any differences between the two shots.</li>
+          <li>you’ll likely save these tests for when pieces of the interface are visually complete.</li>
+        </ul>
+      </section>
+      <section>
+        <h2>Example</h2>
+        <h3 class="bullet"></h3>
+        <pre><code class="language-javascript">casper.start("/home").then(function(){
+
+// Initial state of form
+phantomcss.screenshot("#signUpForm", "sign up form");
+
+// Hit the sign up button (should trigger error)
+casper.click("button#signUp");
+
+// Take a screenshot of the UI component
+phantomcss.screenshot("#signUpForm", "sign up form error");
+
+// Fill in form by name attributes & submit
+casper.fill("#signUpForm", {
+  name: "Alicia Sedlock",
+  email: "alicia@example.com"
+}, true);
+
+  // Take a second screenshot of success state
+  phantomcss.screenshot("#signUpForm", "sign up form success");
+});
+</code></pre>
+      </section>
+      <section><img src="https://camo.githubusercontent.com/bd2fd498218cfbb9f7d417b05ef35e92272bde2f/68747470733a2f2f7261772e6769746875622e636f6d2f487564646c652f5068616e746f6d4353532f6d61737465722f726561646d655f6173736574732f696e74726f2d6578616d706c652e706e67"></section>
+      <section>
+        <h2>Tools for Visual Regression </h2>
+        <h3 class="bullet"></h3>
+        <ul>
+          <li><a href="https://github.com/BBC-News/wraith">Wraith</a></li>
+          <li><a href="https://github.com/Huddle/PhantomCSS">PhantomCSS</a></li>
+          <li><a href="https://github.com/facebookarchive/huxley">Huxley</a></li>
+          <li><a href="https://www.lullabot.com/articles/css-regression-testing-with-resemblejs">Resemblejs</a></li>
+        </ul>
+      </section>
+      <section>
+        <h2>Accessibility and performance tests</h2>
+      </section>
+      <section>
+        <h2>grunt-pagespeed</h2>
+        <p>Google has a service called PageSpeed Insights that grades your site and boils down tons of factors into a "speed index"</p>
+        <p>Testing sites can be automated.</p>
+      </section>
+      <section>
+        <h2>grunt-perfbudget</h2>
+        <p>grunt-perfbudget relies on the immensely useful <b>WebPageTest API</b> to enforce a budget.</p><img src="http://rupl.github.io/frontend-testing/img/grunt-perfbudget-output.png">
+      </section>
+      <section>
+        <h2>Everything passes</h2><img src="https://camo.githubusercontent.com/afff1bea031e4312e07ee4d7b2d81c162216b098/687474703a2f2f7777772e6a616d657363727965722e636f6d2f696d672f706173732e706e67">
+      </section>
+      <section>
+        <h2>task fails to pass the threshold</h2><img src="https://camo.githubusercontent.com/7356c840ae8aa2ec8ed9aad94c9fe71f2ae91dfe/687474703a2f2f7777772e6a616d657363727965722e636f6d2f696d672f6661696c2e706e67">
+      </section>
+      <section>
+        <h2>Ghost Inspector</h2>
+        <p>Ghost Inspector can record a user's actions as they browse normally, and turn those actions into Casper code.</p>
+      </section>
+      <section>
+        <h2>Know Your Limits</h2><img src="http://media.topito.com/wp-content/uploads/2013/01/code-06.gif"><br>
+        <ul>
+          <li><bold>Budget:</bold> Testing is time-consuming and you should charge for it.</li>
+          <li><bold>Timeline:</bold> Include testing in the project’s timeline.</li>
+          <li><bold>Scope:</bold> Not every website needs to work on hundreds of devices</li>
+        </ul>
+      </section>
+      <section data-bespoke-hash="named-route">
+        <h2>Embracing and enforcing a testing culture</h2>
+        <p class="bullet"></p>
+        <ul>
+          <li>Start with known pain points</li>
+          <li>Make it part of the workflow ()</li>
+          <li>Don’t do everything at once</li>
+          <li>Revisit and review</li>
+        </ul>
+      </section>
+      <section>
+        <h2>Questions and Thank you</h2><img src="http://i.imgur.com/xmBjXcm.gif">
+      </section>
+      <section>
+        <h2 class="bullet">Resources</h2>
+        <ul>
+          <li><a href="https://www.smashingmagazine.com/2014/11/how-to-create-your-own-front-end-website-testing-plan/"></li>Testing Plan </a>
+          <li><a href="http://www.creativebloq.com/how-to/an-introduction-to-frontend-testing"></li>Intro to Frontend Testing </a>
+          <li><a href="https://css-tricks.com/intro-monkey-testing-gremlins-js"></li>Introduction to Monkey Testing using grimblin</a>
+        </ul>
+        <h4>Powered by <a href="https://github.com/markdalgleish/bespoke-backdrop">bespoke-backdrop</a></h4>
+      </section>
+    </article>
+    <script src="build/build.js"></script>
+  </body>
+</html>
