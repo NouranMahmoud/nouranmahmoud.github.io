@@ -1,17 +1,394 @@
 // New to Stylus? Check out http://learnboost.github.io/stylus
 // Use modern CSS thanks to Autoprefixer: https://github.com/ai/autoprefixer
 
+@import 'https://fonts.googleapis.com/css?family=Merriweather|Lato:300|Atma|Baloo+Bhai|Boogaloo|Ceviche+One|Cinzel+Decorative|Dancing+Script|Expletus+Sans|Kaushan+Script|Knewave|Life+Savers|Nixie+One|Oregano|Pompiere|Sniglet';
+
+.bespoke-bullet
+  opacity: 0
+  transition: all 150ms cubic-bezier(0.505, 0.055, 0.535, 0.950);
+
+  &.zi
+    transform: scale(0.8)
+
+  &.zo
+    transform: scale(1.2)
+
+  &.bespoke-bullet-active
+    opacity: 1
+    transform: scale(1)
+
+.bespoke-slide:nth-child(2)
+  background: linear-gradient(45deg, #43cea2 , #185a9d)
+
+.bespoke-slide:nth-child(3)
+  background: url(/images/bg1.jpg) no-repeat center center
+  background-size: cover
+
+  &:before
+    content: ""
+    position: absolute
+    width: 640px;
+    height: 480px;
+    border-radius: 30px;
+    background: rgba(75, 66, 16, 0.7)
+    z-index: -1
+
+.bespoke-slide:nth-child(4)
+  background: linear-gradient(45deg, #131b20 , #2c3e50)
+
+  img
+
+    box-shadow: 0 15px 40px 10px rgba(0, 0, 0, 0.5)
+
+.bespoke-slide:nth-child(5)
+  background: linear-gradient(45deg, #66252a, #d02932)
+
+  img
+    max-height: 200px
+
+.bespoke-slide:nth-child(7)
+  text-shadow: 0 1px 2px rgba(#000, 0.75)
+  background: #8f45c7
+
+  &:before
+    content: ""
+    position: absolute
+    width: 640px;
+    height: 480px;
+    border-radius: 30px;
+    background: rgba(75, 66, 16, 0.7)
+    z-index: -1
+
+.bespoke-slide:nth-child(9),
+.bespoke-slide:nth-child(10)
+  background: url(/images/pat1.png) repeat center
+
+  &:before
+    content: ""
+    position: absolute
+    width: 640px;
+    height: 480px;
+    border-radius: 30px;
+    background: rgba(#00838F, 0.7)
+    z-index: -1
+
+  ul
+    font-size: 18px
+    margin: 0
+
+    b
+      display: inline-block
+      font-size: 1em
+      margin: 0
+
+    li
+      margin: 30px
+      list-style: none
+
+.bespoke-slide:nth-child(12)
+  ul
+    list-style: none
+    text-align: center
+
+    li
+      margin-top: 30px
+
+      img
+        margin: 0 auto
+        border-radius: 4px
+        max-width: 150px
+
+    li:nth-child(2)
+      img
+        max-width: 100px
+
+.bespoke-slide:nth-child(14)
+  .code-snippet
+    max-width: 90%;
+    max-height: 330px;
+    overflow: hidden
+    overflow-y: scroll;
+
+.bespoke-slide:nth-child(15)
+  ul
+    list-style: none
+    text-align: center
+    display: flex;
+    align-items: flex-end;
+    padding: 0;
+    width: 90%;
+
+    li
+      flex: 1 1 0;
+      width: 50%
+      margin-top: 30px
+
+      img
+        margin: 0 auto 10px
+        border-radius: 4px
+        max-width: 80px
+
+.bespoke-slide:nth-child(16)
+  img
+    margin: 0 auto
+    max-width: 300px
+
+  ul
+    list-style: none
+    text-align: center
+    display: block;
+    padding: 0
+
+    li
+      float: left
+      width: 25%
+      text-align: center;
+      font-size: 18px
+
+    li:nth-child(2)
+      p
+        font-size: 18px
+        margin: 0
+
+    li:nth-child(2),
+    li:nth-child(3)
+      display: block
+      flex: none;
+      width: 100%
+      font-size: 24px
+      margin-bottom: 10px
+
+.bespoke-slide:nth-child(17),
+.bespoke-slide:nth-child(18)
+  ul
+    list-style: none;
+
+    li
+      margin-top: 20px
+
+
+.bespoke-slide:nth-child(19)
+  > pre
+    box-shadow: 0 20px 50px rgba(#000, 0.75)
+
+.bespoke-slide:nth-child(20)
+  h2
+    margin-top: 30px
+
+  h6
+    margin: 0 0 10px
+    text-transform: capitalize;
+
+  > pre
+    overflow: hidden;
+
+.bespoke-slide:nth-child(21)
+  ul
+    list-style: none;
+    text-align: center;
+    font-size: 18px
+
+    li
+      margin-top: 40px
+
+    img
+      margin: 0 auto 10px;
+      border-radius: 5px
+      max-width: 120px
+
+.bespoke-slide:nth-child(23)
+  h2
+    margin-top: 50px
+
+  iframe
+    position: relative;
+    top: 40px
+    max-width: 90%
+
+.bespoke-slide:nth-child(24)
+  img
+    max-width: 60%
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3)
+
+.bespoke-slide:nth-child(26)
+  h2
+    margin-top: 20px
+
+  h6
+    margin: 0
+    text-transform: capitalize;
+
+  ul
+    margin: 0
+    padding: 0 30px
+    list-style: none;
+
+    li
+      margin-top: 30px
+
+.bespoke-slide:nth-child(27)
+  h2
+    margin: 15px 0 5px;
+
+.bespoke-slide:nth-child(29)
+  ul
+    margin: 0
+    padding: 0 30px
+    list-style: none;
+
+    li
+      margin-top: 20px
+
+      a
+        text-decoration: none;
+        color: #fff
+
+.bespoke-slide:nth-child(32)
+  p
+    font-size: 18px
+    line-height: 1.5
+
+  b
+    display: inline-block
+    font-size: 1em
+    margin: 0
+
+.bespoke-slide:nth-child(33),
+.bespoke-slide:nth-child(34)
+  h2
+    margin: 30px 0 0
+
+.bespoke-slide:nth-child(36)
+  h2
+    margin: 30px 0 30px
+
+.bespoke-slide:nth-child(37)
+  h2
+    margin: 10px 0 30px
+
+  ul
+    list-style: none
+
+    strong
+      display: block;
+      font-family: Merriweather
+      font-size: 16px
+      margin-bottom: 0
+
+    li + li
+      margin-top: 40px
+
+.bespoke-slide:nth-child(38)
+  ul
+    list-style: none
+
+    li + li
+      margin-top: 20px
+
+.bespoke-slide:nth-child(39)
+  background: linear-gradient(45deg, #f74242,#510101);
+
+  &:before
+    content: ""
+    position: absolute
+    width: 640px;
+    height: 480px;
+    border-radius: 30px;
+    background: url(/images/spot.png) no-repeat center
+    background-size: cover;
+    z-index: -1
+
+  h2
+    font-family: 'Dancing Script'
+    font-size: 18px
+    margin: 0
+
+  a
+    color: #fff
+    text-decoration: none;
+    font-family: 'Cinzel Decorative'
+    font-size: 36px
+    display: block;
+    margin: 30px 0
+    text-shadow: 2px 2px 0 #510101,3px 3px 0 rgba(#fff, 0.1);
+
+section
+  font-family: Lato
+  font-weight: 300
+  font-size: 20px
+  text-align: center
+
+  img
+    display: block
+    max-width: 90%
+
+  .frame
+    padding: 5px
+    background: #fff
+    border-radius: 10px
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3)
+
+  p
+    padding: 10px 100px
+
+  .italic
+    font-family: Sniglet
+    line-height: 1.5
+    font-size: 22px
+    letter-spacing: 1px
+
+  em
+    font-family: Lora
+    font-style: italic
+    font-size: smaller
+
+h2
+  margin-top: 0
+  text-align: center
+  font-size: 24px
+  font-family: Merriweather
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2)
+
+h6
+  font-size: 18px
+
+b
+  font-family: Merriweather;
+  display: block;
+  margin: 15px 0;
+  font-size: 24px
+
+ul
+  margin: 0
+  padding: 0 100px
+  line-height: 1.5
+
+li:only-child
+  list-style: none
+  text-align: center
+
+.immediately
+  font-size: 14px
+  letter-spacing: 1px
+  line-height: 24px
+  font-family: Lato
+  font-weight: 300
+
+  span
+    display: block
+    margin-top: 15px
+    margin-bottom: 20px
+    font-family: Merriweather
+    font-size: 36px
+
+
+
+
 // Import CSS from "node_modules" and "bower_components"
 // thanks to Stylus' "import css" and "paths" options
 
 @import 'prism/themes/prism-okaidia.css'
 // Check out "bower_components/prism/themes/" for available themes
 
-section p
-  padding: 40px
-
-section ul>li
-  line-height: 40px
-  
 .code-snippet
   width: inherit

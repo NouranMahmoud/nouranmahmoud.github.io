@@ -9,38 +9,44 @@
   <body>
     <article>
       <section>
-        <h1>Frontend Testing</h1>
+        <h1>Frontend Testing Recipes</h1>
       </section>
       <section>
-        <h2>Frontend Testing become a MUST</h2><br>
+        <h2>Frontend Testing became a MUST</h2>
         <ul>
           <li>Frontend development has drastically shifted into a more complex environment.</li>
         </ul>
       </section>
-      <section><img src="images/evolutionOfJS.jpg"></section>
+      <section><img src="images/evolutionOfJS.jpg" class="frame"></section>
       <section>
-        <p>Enhance developer productivity by catching errors immediately.</p><img src="http://i.imgur.com/Ieo6ddj.gif">
+        <h2 class="immediately">Enhance productivity by catching errors <span>Immediately</span></h2><img src="http://i.imgur.com/Ieo6ddj.gif">
       </section>
       <section>
-        <p>Reduce the number of <b>“Why isn’t this working?”</b> phone calls and emails on Friday night.</p><img src="images/customer.jpg" width="400">
+        <p>Reduce the number of <b>“Why isn’t this working?”</b> phone calls and emails on Friday night.</p><img src="images/customer.jpg">
       </section>
       <section>
-        <p>Helpful documentation complement</p>
+        <h2>Helpful documentation complement</h2>
       </section>
       <section>
-        <p>While your particular application may not need to take advantage of every type of testing that exists, it’s important to know the options that are out there, what they are used for, and when it’s appropriate to use each one. You should feel comfortable assessing which testing strategies fit best with your team and codebases.</p>
+        <p class="italic">While your particular application may not need to take advantage of every type of testing that exists, it’s important to know the options that are out there, what they are used for, and when it’s appropriate to use each one.</p>
+        <p class="italic">You should feel comfortable assessing which testing strategies fit best with your team and codebases.</p>
       </section>
       <section>
         <h2>Automated Testing Strategies</h2>
       </section>
       <section>
-        <h2>Unit Test </h2><br>
+        <h2>Unit Test </h2>
         <ul>
-          <li>Think of it as <bold>‘do one thing well’</bold> mantra</li>
+          <li>Think of it as <b>‘Do one thing well’</b> mantra</li>
           <li>It is making sure individual sets of code are working as intended before building the larger feature.</li>
-          <li>A test suite – a grouping of tests related to a particular area of the application.</li>
-          <li>it enables you to run suites on their own. If you’re working on a new feature for an application, you don’t want to run every test during active development, as that would be time consuming.</li>
-          <li>Using the it function, we write the feature or piece of functionality we are testing.</li>
+          <li>A test suite – <em>a grouping of tests related to a particular area of the application.</em></li>
+        </ul>
+      </section>
+      <section>
+        <h2>Unit Test </h2>
+        <ul>
+          <li>It enables you to run suites on their own. If you’re working on a new feature for an application, you don’t want to run every test during active development, as that would be time consuming.</li>
+          <li>Using the <code>it</code> function, we write the feature or piece of functionality we are testing.</li>
           <li>Pure functions, Mocks (data assertions) ,and Stubs (functions return).</li>
         </ul>
       </section>
@@ -49,7 +55,7 @@
         <pre><code class="language-javascript">describe("Calculator Operations", function () {
   it("Should add two numbers", function () {
     Calculator.init();
-    var result = Calculator.addNumbers(7,3);
+    var result = Calculator.addNumbers(7, 3);
     expect(result).toBe(10);
   });
 });
@@ -59,12 +65,13 @@
       <section>
         <h2>Let’s Tool Up</h2>
         <ul>
-          <li>Jasminejs</li>
-          <li>Mochajs</li>
+          <li></li>
+          <li class="zo"><img src="/images/jasmine.png" /> Jasmine</li>
+          <li class="zo"><img src="/images/mocha.svg" /> Mocha</li>
         </ul>
       </section>
       <section>
-        <h2>Integration Test <small>(REST API testing)</small></h2><br>
+        <h2>Integration Test <small>(REST API Testing)</small></h2>
         <ul>
           <li>Integration test is the phase in software testing in which individual software modules are combined and tested as a group.</li>
         </ul>
@@ -74,11 +81,13 @@
         <div class="code-snippet">
           <pre><code class="language-javascript">var frisby = require('frisby');
 frisby.create('Get Brightbit Twitter feed')
-  .get('https://api.twitter.com/1/statuses/user_timeline.json?screen_name=brightbit')
+  .get('https://api.twitter.com/?screen_name=brightbit')
   .expectStatus(200)
   .expectHeaderContains('content-type', 'application/json')
   .expectJSON('0', {
-    place: function(val) { expect(val).toMatchOrBeNull("Oklahoma City, OK"); }, // Custom matcher callback
+    place: function(val) {
+      expect(val).toMatchOrBeNull("Oklahoma City, OK");
+    }, // Custom matcher callback
     user: {
       verified: false,
       location: "Oklahoma City, OK",
@@ -93,18 +102,36 @@ frisby.create('Get Brightbit Twitter feed')
       <section>
         <h2>Tools</h2>
         <ul>
-          <li>Jasmine-frisby</li>
-          <li>Mocha + chai</li>
-          <li>hippie</li>
-          <li>Chakram</li>
+          <li><img src="/images/frisby.png" /> Jasmine-frisby</li>
+          <li><img src="/images/chai.png" /> Mocha + chai</li>
+          <li><img src="/images/hippie.png" /> hippie</li>
+          <li><img src="/images/chakram.png" /> Chakram</li>
         </ul>
       </section>
       <section>
-        <h2>End-to-End Test/ Smoking Test/</h2>
-        <h6>Back Box Test / Acceptance tests / validation testing / Functional testing</h6><br>
+        <h2>Smoking Test</h2><img src="http://i.imgur.com/pxFdZSe.gif">
+        <ul>
+          <li></li>
+          <li>
+            <p><em>also known as</em></p>
+          </li>
+          <li>End-to-End Test</li>
+          <li>Black Box Test</li>
+          <li>Acceptance Test</li>
+          <li>Validation Test</li>
+          <li>Functional Test</li>
+        </ul>
+      </section>
+      <section>
+        <h2>Smoking Test</h2>
         <ul>
           <li>Just because all the pieces are accounted for doesn’t mean that the instructions are properly executable and will allow you to build the final model. </li>
           <li>Tests go through your running application and ensure designated actions, user inputs and user flows are completable and functioning</li>
+        </ul>
+      </section>
+      <section>
+        <h2>Smoking Test</h2>
+        <ul>
           <li> We’re testing to see if a particular workflow (a sign-up flow) behaves as expected when we fill in some bad information.</li>
           <li> How does your user interact with your website, and what is the expected outcome of that interaction?</li>
         </ul>
@@ -124,7 +151,7 @@ frisby.create('Get Brightbit Twitter feed')
       </section>
       <section>
         <h2>Example</h2>
-        <h6>(cucumber-mink features)</h6>
+        <h6>cucumber-mink features</h6>
         <pre><code class="language-javascript">Feature: Post page
 
 Background:
@@ -138,11 +165,11 @@ Scenario: Go on post 1
   </code></pre>
       </section>
       <section>
-        <h2>Tools</h2><br>
+        <h2>Tools</h2>
         <ul>
-          <li>Cucumberjs + Cucumber Mink</li>
-          <li>Pioneerjs</li>
-          <li>cypress.io</li>
+          <li><img src="/images/cucumber.png" /> CucumberJS + Cucumber Mink</li>
+          <li><img src="/images/pioneerjs.svg" /> PioneerJS</li>
+          <li><img src="/images/cypress.png" /> Cypress.io</li>
         </ul>
       </section>
       <section>
@@ -150,22 +177,21 @@ Scenario: Go on post 1
         <p>Monkey testing is a technique where the user tests the application or system by providing random inputs and checking the behavior, or seeing whether the application or system will crash. </p>
       </section>
       <section>
-        <h2>Example</h2><p data-height="265" data-theme-id="0" data-slug-hash="NbKazb" data-default-tab="html,result" data-user="aliciasedlock" data-embed-version="2" data-pen-title="Focus components with Gremlins.js" class="codepen">See the Pen <a href="https://codepen.io/aliciasedlock/pen/NbKazb/">Focus components with Gremlins.js</a> by Alicia Sedlock (<a href="http://codepen.io/aliciasedlock">@aliciasedlock</a>) on <a href="http://codepen.io">CodePen</a>.</p>
-        <script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
+        <h2>Example</h2>
+        <iframe height="400" scrolling="no" title="Focus components with Gremlins.js" src="//codepen.io/aliciasedlock/embed/NbKazb/?height=400&amp;theme-id=0&amp;default-tab=html&amp;embed-version=2" frameborder="no" allowtransparency="true" allowfullscreen="true" style="width: 100%;">See the Pen <a href='http://codepen.io/aliciasedlock/pen/NbKazb/'>Focus components with Gremlins.js</a> by Alicia Sedlock (<a href='http://codepen.io/aliciasedlock'>@aliciasedlock</a>) on <a href='http://codepen.io'>CodePen</a>.</iframe>
       </section>
       <section>
         <h2>Example</h2><img src="https://camo.githubusercontent.com/130e101ee69d4d9b6f065df0a0404c861eb5ce18/687474703a2f2f7374617469632e6d61726d656c61622e636f6d2f746f646f2e676966">
       </section>
       <section>
-        <h2>Tools</h2><br>
+        <h2>Tools</h2>
         <ul>
           <li>Gremlins.js</li>
         </ul>
       </section>
       <section>
         <h2>Visual Regression </h2>
-        <h6>(find differences game)</h6>
-        <h3 class="bullet"></h3>
+        <h6>find differences game</h6>
         <ul>
           <li> This doesn’t test your code, but rather compares the rendered result of your code – your interface – with the rendered version of your application in production, staging, or a pre-changed local environment. </li>
           <li>Image comparison tools then detect any differences between the two shots.</li>
@@ -174,7 +200,6 @@ Scenario: Go on post 1
       </section>
       <section>
         <h2>Example</h2>
-        <h3 class="bullet"></h3>
         <pre><code class="language-javascript">casper.start("/home").then(function(){
 
 // Initial state of form
@@ -200,7 +225,6 @@ casper.fill("#signUpForm", {
       <section><img src="https://camo.githubusercontent.com/bd2fd498218cfbb9f7d417b05ef35e92272bde2f/68747470733a2f2f7261772e6769746875622e636f6d2f487564646c652f5068616e746f6d4353532f6d61737465722f726561646d655f6173736574732f696e74726f2d6578616d706c652e706e67"></section>
       <section>
         <h2>Tools for Visual Regression </h2>
-        <h3 class="bullet"></h3>
         <ul>
           <li><a href="https://github.com/BBC-News/wraith">Wraith</a></li>
           <li><a href="https://github.com/Huddle/PhantomCSS">PhantomCSS</a></li>
@@ -230,25 +254,28 @@ casper.fill("#signUpForm", {
         <h2>Ghost Inspector</h2>
         <p>Ghost Inspector can record a user's actions as they browse normally, and turn those actions into Casper code.</p>
       </section>
-      <section><img src="images/knowyourlimits.jpg" width="300" heigth="200"><br>
+      <section>
+        <h2>Know your Limits</h2><img src="images/knowyourlimits.jpg" width="300" heigth="200">
+      </section>
+      <section>
+        <h2>Know your Limits</h2>
         <ul>
-          <li><b>Budget:</b> Testing is time-consuming and you should charge for it.</li>
-          <li><b>Timeline:</b> Include testing in the project’s timeline.</li>
-          <li><b>Scope:</b> Not every website needs to work on hundreds of devices</li>
+          <li><strong>Budget</strong> Testing is time-consuming and you should charge for it.</li>
+          <li><strong>Timeline</strong> Include testing in the project’s timeline.</li>
+          <li><strong>Scope</strong> Not every website needs to work on hundreds of devices</li>
         </ul>
       </section>
       <section data-bespoke-hash="named-route">
         <h2>Embracing and Enforcing a Testing Culture</h2>
-        <p class="bullet"></p>
         <ul>
           <li>Start with known pain points</li>
-          <li>Make it part of the workflow ()</li>
+          <li>Make it part of the workflow</li>
           <li>Don’t do everything at once</li>
           <li>Revisit and review</li>
         </ul>
       </section>
       <section>
-        <h2>Questions and Thank you</h2><a href="https://twitter.com/NouranMhmoud">Nouran Mahmoud</a><br><img src="http://i.imgur.com/xmBjXcm.gif">
+        <h2>Questions and Thank you</h2><a href="https://twitter.com/NouranMhmoud" class="speaker">Nouran Mahmoud</a><img src="http://i.imgur.com/xmBjXcm.gif">
       </section>
       <section>
         <h2 class="bullet">Resources</h2>

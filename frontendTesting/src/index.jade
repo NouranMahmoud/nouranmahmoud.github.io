@@ -10,43 +10,49 @@ html
   body
     article
       section
-        h1 Frontend Testing
+        h1 Frontend Testing Recipes
 
       section
-        h2 Frontend Testing become a MUST
-        br
+        h2 Frontend Testing became a MUST
+        
         ul
           li Frontend development has drastically shifted into a more complex environment.
           
       section
-        img(src='images/evolutionOfJS.jpg')
+        img.frame(src='images/evolutionOfJS.jpg')
       
       section
-        p Enhance developer productivity by catching errors immediately.
+        h2.immediately Enhance productivity by catching errors <span>Immediately</span>
         img(src='http://i.imgur.com/Ieo6ddj.gif')
       
       section
         p Reduce the number of <b>“Why isn’t this working?”</b> phone calls and emails on Friday night.
-        img(src='images/customer.jpg', width='400')
+        img(src='images/customer.jpg')
 
       section
-        p Helpful documentation complement
+        h2 Helpful documentation complement
       
       section
-        p While your particular application may not need to take advantage of every type of testing that exists, it’s important to know the options that are out there, what they are used for, and when it’s appropriate to use each one. You should feel comfortable assessing which testing strategies fit best with your team and codebases.
+        p.italic While your particular application may not need to take advantage of every type of testing that exists, it’s important to know the options that are out there, what they are used for, and when it’s appropriate to use each one.
+        p.italic You should feel comfortable assessing which testing strategies fit best with your team and codebases.
       
       section
         h2 Automated Testing Strategies
       
       section
         h2 Unit Test 
-        br
+        
         ul
-          li Think of it as <bold>‘do one thing well’</bold> mantra
+          li Think of it as <b>‘Do one thing well’</b> mantra
           li It is making sure individual sets of code are working as intended before building the larger feature.
-          li A test suite – a grouping of tests related to a particular area of the application.
-          li it enables you to run suites on their own. If you’re working on a new feature for an application, you don’t want to run every test during active development, as that would be time consuming.
-          li Using the it function, we write the feature or piece of functionality we are testing.
+          li A test suite – <em>a grouping of tests related to a particular area of the application.</em>
+      
+      section
+        h2 Unit Test 
+        
+        ul
+          li It enables you to run suites on their own. If you’re working on a new feature for an application, you don’t want to run every test during active development, as that would be time consuming.
+          li Using the <code>it</code> function, we write the feature or piece of functionality we are testing.
           li Pure functions, Mocks (data assertions) ,and Stubs (functions return).
 
       section
@@ -56,7 +62,7 @@ html
             describe("Calculator Operations", function () {
               it("Should add two numbers", function () {
                 Calculator.init();
-                var result = Calculator.addNumbers(7,3);
+                var result = Calculator.addNumbers(7, 3);
                 expect(result).toBe(10);
               });
             });
@@ -65,13 +71,14 @@ html
       section
         h2 Let’s Tool Up
         ul
-          li Jasminejs
-          li Mochajs
+          li
+          li.zo <img src="/images/jasmine.png" /> Jasmine
+          li.zo <img src="/images/mocha.svg" /> Mocha
 
       
       section
-        h2 Integration Test <small>(REST API testing)</small>
-        br
+        h2 Integration Test <small>(REST API Testing)</small>
+        
         ul
           li Integration test is the phase in software testing in which individual software modules are combined and tested as a group.
       
@@ -82,11 +89,13 @@ html
             code.language-javascript.
               var frisby = require('frisby');
               frisby.create('Get Brightbit Twitter feed')
-                .get('https://api.twitter.com/1/statuses/user_timeline.json?screen_name=brightbit')
+                .get('https://api.twitter.com/?screen_name=brightbit')
                 .expectStatus(200)
                 .expectHeaderContains('content-type', 'application/json')
                 .expectJSON('0', {
-                  place: function(val) { expect(val).toMatchOrBeNull("Oklahoma City, OK"); }, // Custom matcher callback
+                  place: function(val) {
+                    expect(val).toMatchOrBeNull("Oklahoma City, OK");
+                  }, // Custom matcher callback
                   user: {
                     verified: false,
                     location: "Oklahoma City, OK",
@@ -99,19 +108,40 @@ html
       section
         h2 Tools
         ul
-          li Jasmine-frisby
-          li Mocha + chai
-          li hippie
-          li Chakram
+          li <img src="/images/frisby.png" /> Jasmine-frisby
+          li <img src="/images/chai.png" /> Mocha + chai
+          li <img src="/images/hippie.png" /> hippie
+          li <img src="/images/chakram.png" /> Chakram
 
 
       section
-        h2 End-to-End Test/ Smoking Test/
-        h6 Back Box Test / Acceptance tests / validation testing / Functional testing
-        br
+        h2 Smoking Test
+        
+        img(src="http://i.imgur.com/pxFdZSe.gif")
+        
+        ul
+          li 
+          li 
+            p
+              em also known as
+          li End-to-End Test
+          li Black Box Test
+          li Acceptance Test
+          li Validation Test
+          li Functional Test
+
+      section
+        h2 Smoking Test
+        
         ul
           li Just because all the pieces are accounted for doesn’t mean that the instructions are properly executable and will allow you to build the final model. 
           li Tests go through your running application and ensure designated actions, user inputs and user flows are completable and functioning
+      
+
+      section
+        h2 Smoking Test
+        
+        ul
           li  We’re testing to see if a particular workflow (a sign-up flow) behaves as expected when we fill in some bad information.
           li  How does your user interact with your website, and what is the expected outcome of that interaction?
       
@@ -131,7 +161,7 @@ html
 
       section
         h2 Example
-        h6 (cucumber-mink features)
+        h6 cucumber-mink features
         pre
           code.language-javascript.
             Feature: Post page
@@ -147,11 +177,11 @@ html
       
       section
         h2 Tools
-        br
+        
         ul
-          li Cucumberjs + Cucumber Mink
-          li Pioneerjs
-          li cypress.io
+          li <img src="/images/cucumber.png" /> CucumberJS + Cucumber Mink
+          li <img src="/images/pioneerjs.svg" /> PioneerJS
+          li <img src="/images/cypress.png" /> Cypress.io
 
       section
         h2 Monkey Testing
@@ -159,21 +189,19 @@ html
       
       section
         h2 Example
-        <p data-height="265" data-theme-id="0" data-slug-hash="NbKazb" data-default-tab="html,result" data-user="aliciasedlock" data-embed-version="2" data-pen-title="Focus components with Gremlins.js" class="codepen">See the Pen <a href="https://codepen.io/aliciasedlock/pen/NbKazb/">Focus components with Gremlins.js</a> by Alicia Sedlock (<a href="http://codepen.io/aliciasedlock">@aliciasedlock</a>) on <a href="http://codepen.io">CodePen</a>.</p>
-        <script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
+        iframe(height='400', scrolling='no', title='Focus components with Gremlins.js', src='//codepen.io/aliciasedlock/embed/NbKazb/?height=400&theme-id=0&default-tab=html&embed-version=2', frameborder='no', allowtransparency='true', allowfullscreen='true', style='width: 100%;') See the Pen <a href='http://codepen.io/aliciasedlock/pen/NbKazb/'>Focus components with Gremlins.js</a> by Alicia Sedlock (<a href='http://codepen.io/aliciasedlock'>@aliciasedlock</a>) on <a href='http://codepen.io'>CodePen</a>.
       
       section
         h2 Example
         img(src='https://camo.githubusercontent.com/130e101ee69d4d9b6f065df0a0404c861eb5ce18/687474703a2f2f7374617469632e6d61726d656c61622e636f6d2f746f646f2e676966')
       section
         h2 Tools
-        br
+        
         ul
           li Gremlins.js
       section
         h2 Visual Regression 
-        h6 (find differences game)
-        h3.bullet
+        h6 find differences game
         ul
           li  This doesn’t test your code, but rather compares the rendered result of your code – your interface – with the rendered version of your application in production, staging, or a pre-changed local environment. 
           li Image comparison tools then detect any differences between the two shots.
@@ -181,7 +209,6 @@ html
 
       section
         h2 Example
-        h3.bullet
         pre
           code.language-javascript.
             casper.start("/home").then(function(){
@@ -210,7 +237,6 @@ html
 
       section
         h2 Tools for Visual Regression 
-        h3.bullet
         ul
           li <a href="https://github.com/BBC-News/wraith">Wraith</a>
           li <a href="https://github.com/Huddle/PhantomCSS">PhantomCSS</a>
@@ -245,27 +271,32 @@ html
         p Ghost Inspector can record a user's actions as they browse normally, and turn those actions into Casper code.
 
       section
+        h2 Know your Limits
+        
         img(src='images/knowyourlimits.jpg' width='300' heigth='200')
-        br
+        
+
+      section
+        h2 Know your Limits
+        
         ul
-          li <b>Budget:</b> Testing is time-consuming and you should charge for it.
-          li <b>Timeline:</b> Include testing in the project’s timeline.
-          li <b>Scope:</b> Not every website needs to work on hundreds of devices
+          li <strong>Budget</strong> Testing is time-consuming and you should charge for it.
+          li <strong>Timeline</strong> Include testing in the project’s timeline.
+          li <strong>Scope</strong> Not every website needs to work on hundreds of devices
       
       section(data-bespoke-hash='named-route')
         h2 Embracing and Enforcing a Testing Culture
-        p.bullet 
         ul
           li Start with known pain points
-          li Make it part of the workflow ()
+          li Make it part of the workflow
           li Don’t do everything at once
           li Revisit and review
 
       
       section
         h2 Questions and Thank you
-        a(href='https://twitter.com/NouranMhmoud') Nouran Mahmoud
-        br
+        a.speaker(href='https://twitter.com/NouranMhmoud') Nouran Mahmoud
+        
         img(src='http://i.imgur.com/xmBjXcm.gif')
 
       section
