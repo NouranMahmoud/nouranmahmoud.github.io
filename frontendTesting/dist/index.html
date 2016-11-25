@@ -39,9 +39,9 @@
           <li>Think of it as <bold>‘do one thing well’</bold> mantra</li>
           <li>It is making sure individual sets of code are working as intended before building the larger feature.</li>
           <li>A test suite – a grouping of tests related to a particular area of the application.</li>
-          <li>it enables you to to run suites on their own. If you’re working on a new feature for an application, you don’t want to run every test during active development, as that would be very time consuming.</li>
+          <li>it enables you to run suites on their own. If you’re working on a new feature for an application, you don’t want to run every test during active development, as that would be time consuming.</li>
           <li>Using the it function, we write the feature or piece of functionality we are testing.</li>
-          <li>pure functions, Mocks (data assertions) ,and Stubs (functions return).</li>
+          <li>Pure functions, Mocks (data assertions) ,and Stubs (functions return).</li>
         </ul>
       </section>
       <section>
@@ -71,7 +71,8 @@
       </section>
       <section>
         <h2>Example</h2>
-        <pre><code class="language-javascript">var frisby = require('frisby');
+        <div class="code-snippet">
+          <pre><code class="language-javascript">var frisby = require('frisby');
 frisby.create('Get Brightbit Twitter feed')
   .get('https://api.twitter.com/1/statuses/user_timeline.json?screen_name=brightbit')
   .expectStatus(200)
@@ -87,6 +88,7 @@ frisby.create('Get Brightbit Twitter feed')
 .toss();
 
 </code></pre>
+        </div>
       </section>
       <section>
         <h2>Tools</h2>
@@ -102,8 +104,8 @@ frisby.create('Get Brightbit Twitter feed')
         <h6>Back Box Test / Acceptance tests / validation testing / Functional testing</h6><br>
         <ul>
           <li>Just because all the pieces are accounted for doesn’t mean that the instructions are properly executable and will allow you to build the final model. </li>
-          <li>tests go through your running application and ensure designated actions, user inputs and user flows are completable and functioning</li>
-          <li> we’re testing to see if a particular workflow (a sign-up flow) behaves as expected when we fill in some bad information.</li>
+          <li>Tests go through your running application and ensure designated actions, user inputs and user flows are completable and functioning</li>
+          <li> We’re testing to see if a particular workflow (a sign-up flow) behaves as expected when we fill in some bad information.</li>
           <li> How does your user interact with your website, and what is the expected outcome of that interaction?</li>
         </ul>
       </section>
@@ -145,7 +147,7 @@ Scenario: Go on post 1
       </section>
       <section>
         <h2>Monkey Testing</h2>
-        <p>monkey testing is a technique where the user tests the application or system by providing random inputs and checking the behavior, or seeing whether the application or system will crash. </p>
+        <p>Monkey testing is a technique where the user tests the application or system by providing random inputs and checking the behavior, or seeing whether the application or system will crash. </p>
       </section>
       <section>
         <h2>Example</h2><p data-height="265" data-theme-id="0" data-slug-hash="NbKazb" data-default-tab="html,result" data-user="aliciasedlock" data-embed-version="2" data-pen-title="Focus components with Gremlins.js" class="codepen">See the Pen <a href="https://codepen.io/aliciasedlock/pen/NbKazb/">Focus components with Gremlins.js</a> by Alicia Sedlock (<a href="http://codepen.io/aliciasedlock">@aliciasedlock</a>) on <a href="http://codepen.io">CodePen</a>.</p>
@@ -161,12 +163,13 @@ Scenario: Go on post 1
         </ul>
       </section>
       <section>
-        <h2>Visual Regression <small>find differences game</small></h2>
+        <h2>Visual Regression </h2>
+        <h6>(find differences game)</h6>
         <h3 class="bullet"></h3>
         <ul>
           <li> This doesn’t test your code, but rather compares the rendered result of your code – your interface – with the rendered version of your application in production, staging, or a pre-changed local environment. </li>
           <li>Image comparison tools then detect any differences between the two shots.</li>
-          <li>you’ll likely save these tests for when pieces of the interface are visually complete.</li>
+          <li>You’ll likely save these tests for when pieces of the interface are visually complete.</li>
         </ul>
       </section>
       <section>
@@ -206,37 +209,36 @@ casper.fill("#signUpForm", {
         </ul>
       </section>
       <section>
-        <h2>Accessibility and performance tests</h2>
+        <h2>Accessibility and Performance Tests</h2><img src="images/performance.gif">
       </section>
       <section>
-        <h2>grunt-pagespeed</h2>
+        <h2>Grunt-pagespeed</h2>
         <p>Google has a service called PageSpeed Insights that grades your site and boils down tons of factors into a "speed index"</p>
         <p>Testing sites can be automated.</p>
       </section>
       <section>
-        <h2>grunt-perfbudget</h2>
-        <p>grunt-perfbudget relies on the immensely useful <b>WebPageTest API</b> to enforce a budget.</p><img src="http://rupl.github.io/frontend-testing/img/grunt-perfbudget-output.png">
+        <h2>Grunt-perfbudget</h2>
+        <p>Grunt-perfbudget relies on the immensely useful <b>WebPageTest API</b> to enforce a budget.</p><img src="http://rupl.github.io/frontend-testing/img/grunt-perfbudget-output.png" width="500" heigth="400">
       </section>
       <section>
-        <h2>Everything passes</h2><img src="https://camo.githubusercontent.com/afff1bea031e4312e07ee4d7b2d81c162216b098/687474703a2f2f7777772e6a616d657363727965722e636f6d2f696d672f706173732e706e67">
+        <h2>Everything Passes</h2><img src="https://camo.githubusercontent.com/afff1bea031e4312e07ee4d7b2d81c162216b098/687474703a2f2f7777772e6a616d657363727965722e636f6d2f696d672f706173732e706e67" width="500" heigth="400">
       </section>
       <section>
-        <h2>task fails to pass the threshold</h2><img src="https://camo.githubusercontent.com/7356c840ae8aa2ec8ed9aad94c9fe71f2ae91dfe/687474703a2f2f7777772e6a616d657363727965722e636f6d2f696d672f6661696c2e706e67">
+        <h2>Task Fails to Pass The Threshold</h2><img src="https://camo.githubusercontent.com/7356c840ae8aa2ec8ed9aad94c9fe71f2ae91dfe/687474703a2f2f7777772e6a616d657363727965722e636f6d2f696d672f6661696c2e706e67" width="500" heigth="400">
       </section>
       <section>
         <h2>Ghost Inspector</h2>
         <p>Ghost Inspector can record a user's actions as they browse normally, and turn those actions into Casper code.</p>
       </section>
-      <section>
-        <h2>Know Your Limits</h2><img src="http://media.topito.com/wp-content/uploads/2013/01/code-06.gif"><br>
+      <section><img src="images/knowyourlimits.jpg" width="300" heigth="200"><br>
         <ul>
-          <li><bold>Budget:</bold> Testing is time-consuming and you should charge for it.</li>
-          <li><bold>Timeline:</bold> Include testing in the project’s timeline.</li>
-          <li><bold>Scope:</bold> Not every website needs to work on hundreds of devices</li>
+          <li><b>Budget:</b> Testing is time-consuming and you should charge for it.</li>
+          <li><b>Timeline:</b> Include testing in the project’s timeline.</li>
+          <li><b>Scope:</b> Not every website needs to work on hundreds of devices</li>
         </ul>
       </section>
       <section data-bespoke-hash="named-route">
-        <h2>Embracing and enforcing a testing culture</h2>
+        <h2>Embracing and Enforcing a Testing Culture</h2>
         <p class="bullet"></p>
         <ul>
           <li>Start with known pain points</li>
@@ -246,7 +248,7 @@ casper.fill("#signUpForm", {
         </ul>
       </section>
       <section>
-        <h2>Questions and Thank you</h2><img src="http://i.imgur.com/xmBjXcm.gif">
+        <h2>Questions and Thank you</h2><a href="https://twitter.com/NouranMhmoud">Nouran Mahmoud</a><br><img src="http://i.imgur.com/xmBjXcm.gif">
       </section>
       <section>
         <h2 class="bullet">Resources</h2>
