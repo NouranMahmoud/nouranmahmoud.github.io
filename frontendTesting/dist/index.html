@@ -9,7 +9,8 @@
   <body>
     <article>
       <section>
-        <h1>Frontend Testing Recipes</h1>
+        <h1>Frontend Testing <span>Recipes</span></h1>
+        <p>by <br> Nouran Mahmoud</p>
       </section>
       <section>
         <h2>Frontend Testing became a MUST</h2>
@@ -51,16 +52,45 @@
         </ul>
       </section>
       <section>
-        <h2>Example</h2>
-        <pre><code class="language-javascript">describe("Calculator Operations", function () {
-  it("Should add two numbers", function () {
-    Calculator.init();
-    var result = Calculator.addNumbers(7, 3);
-    expect(result).toBe(10);
+        <h2 style="padding-top: 20px;">Example</h2>
+        <pre style="width:90%"><code class="language-javascript">describe("MathUtils", function() {
+  var calc;
+  
+  //This will be called before running each spec
+  beforeEach(function() {
+      calc = new MathUtils();
+  });
+  
+  describe("when calc is used to peform basic math operations", function(){
+  
+      //Spec for sum operation
+      it("should be able to calculate sum of 3 and 5", function() {
+          expect(calc.sum(3,5)).toEqual(8);
+      });
+      
+      //Spec for multiply operation
+      it("should be able to multiply 10 and 40", function() {
+          expect(calc.multiply(10, 40)).toEqual(400);
+      });
+      
+      //Spec for factorial operation for positive number
+      it("should be able to calculate factorial of 9", function() {
+          expect(calc.factorial(9)).toEqual(362880);
+      });
+      
+      //Spec for factorial operation for negative number
+      it("should be able to throw error in factorial operation when the number is negative", function() {
+          expect(function() { 
+              calc.factorial(-7)
+          }).toThrowError(Error);
+      });
+      
   });
 });
-
 </code></pre>
+      </section>
+      <section>
+        <h2>Result</h2><img src="http://howtodoinjava.com/wp-content/uploads/2016/07/Jasmine-Output.png">
       </section>
       <section>
         <h2>Let’s Tool Up</h2>
@@ -125,13 +155,14 @@ frisby.create('Get Brightbit Twitter feed')
       <section>
         <h2>Smoking Test</h2>
         <ul>
+          <li>The term “smoke test” comes from the olden days when if you wanted to see if a device was working, you could just plug it into the wall and if you smelled smoke, that was bad.</li>
           <li>Just because all the pieces are accounted for doesn’t mean that the instructions are properly executable and will allow you to build the final model. </li>
-          <li>Tests go through your running application and ensure designated actions, user inputs and user flows are completable and functioning</li>
         </ul>
       </section>
       <section>
         <h2>Smoking Test</h2>
         <ul>
+          <li>Tests go through your running application and ensure designated actions, user inputs and user flows are completable and functioning</li>
           <li> We’re testing to see if a particular workflow (a sign-up flow) behaves as expected when we fill in some bad information.</li>
           <li> How does your user interact with your website, and what is the expected outcome of that interaction?</li>
         </ul>
@@ -190,7 +221,7 @@ Scenario: Go on post 1
         </ul>
       </section>
       <section>
-        <h2>Visual Regression </h2>
+        <h2>Visual Regression</h2>
         <h6>find differences game</h6>
         <ul>
           <li> This doesn’t test your code, but rather compares the rendered result of your code – your interface – with the rendered version of your application in production, staging, or a pre-changed local environment. </li>
@@ -222,7 +253,7 @@ casper.fill("#signUpForm", {
 });
 </code></pre>
       </section>
-      <section><img src="https://camo.githubusercontent.com/bd2fd498218cfbb9f7d417b05ef35e92272bde2f/68747470733a2f2f7261772e6769746875622e636f6d2f487564646c652f5068616e746f6d4353532f6d61737465722f726561646d655f6173736574732f696e74726f2d6578616d706c652e706e67"></section>
+      <section><img src="https://cdn.css-tricks.com/wp-content/uploads/2015/11/output.png"></section>
       <section>
         <h2>Tools for Visual Regression </h2>
         <ul>
@@ -241,14 +272,14 @@ casper.fill("#signUpForm", {
         <p>Testing sites can be automated.</p>
       </section>
       <section>
-        <h2>Grunt-perfbudget</h2>
-        <p>Grunt-perfbudget relies on the immensely useful <b>WebPageTest API</b> to enforce a budget.</p><img src="http://rupl.github.io/frontend-testing/img/grunt-perfbudget-output.png" width="500" heigth="400">
-      </section>
-      <section>
         <h2>Everything Passes</h2><img src="https://camo.githubusercontent.com/afff1bea031e4312e07ee4d7b2d81c162216b098/687474703a2f2f7777772e6a616d657363727965722e636f6d2f696d672f706173732e706e67" width="500" heigth="400">
       </section>
       <section>
         <h2>Task Fails to Pass The Threshold</h2><img src="https://camo.githubusercontent.com/7356c840ae8aa2ec8ed9aad94c9fe71f2ae91dfe/687474703a2f2f7777772e6a616d657363727965722e636f6d2f696d672f6661696c2e706e67" width="500" heigth="400">
+      </section>
+      <section>
+        <h2>Grunt-perfbudget</h2>
+        <p>Grunt-perfbudget relies on the immensely useful <b>WebPageTest API</b> to enforce a budget.</p><img src="http://rupl.github.io/frontend-testing/img/grunt-perfbudget-output.png" width="500" heigth="400">
       </section>
       <section>
         <h2>Ghost Inspector</h2>
@@ -274,8 +305,9 @@ casper.fill("#signUpForm", {
           <li>Revisit and review</li>
         </ul>
       </section>
+      <section></section>
       <section>
-        <h2>Questions and Thank you</h2><a href="https://twitter.com/NouranMhmoud" class="speaker">Nouran Mahmoud</a><img src="http://i.imgur.com/xmBjXcm.gif">
+        <h2>Thank you</h2><a href="https://twitter.com/NouranMhmoud" class="speaker">Nouran Mahmoud</a><img src="http://i.imgur.com/xmBjXcm.gif">
       </section>
       <section>
         <h2 class="bullet">Resources</h2>

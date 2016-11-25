@@ -10,7 +10,9 @@ html
   body
     article
       section
-        h1 Frontend Testing Recipes
+        h1 Frontend Testing <span>Recipes</span>
+        
+        p by <br> Nouran Mahmoud
 
       section
         h2 Frontend Testing became a MUST
@@ -56,18 +58,47 @@ html
           li Pure functions, Mocks (data assertions) ,and Stubs (functions return).
 
       section
-        h2 Example
-        pre
+        h2(style="padding-top: 20px;") Example
+        pre(style="width:90%")
           code.language-javascript.
-            describe("Calculator Operations", function () {
-              it("Should add two numbers", function () {
-                Calculator.init();
-                var result = Calculator.addNumbers(7, 3);
-                expect(result).toBe(10);
+            describe("MathUtils", function() {
+              var calc;
+           
+              //This will be called before running each spec
+              beforeEach(function() {
+                  calc = new MathUtils();
+              });
+           
+              describe("when calc is used to peform basic math operations", function(){
+                   
+                  //Spec for sum operation
+                  it("should be able to calculate sum of 3 and 5", function() {
+                      expect(calc.sum(3,5)).toEqual(8);
+                  });
+           
+                  //Spec for multiply operation
+                  it("should be able to multiply 10 and 40", function() {
+                      expect(calc.multiply(10, 40)).toEqual(400);
+                  });
+           
+                  //Spec for factorial operation for positive number
+                  it("should be able to calculate factorial of 9", function() {
+                      expect(calc.factorial(9)).toEqual(362880);
+                  });
+                   
+                  //Spec for factorial operation for negative number
+                  it("should be able to throw error in factorial operation when the number is negative", function() {
+                      expect(function() { 
+                          calc.factorial(-7)
+                      }).toThrowError(Error);
+                  });
+                   
               });
             });
       
-
+      section
+        h2 Result
+        img(src='http://howtodoinjava.com/wp-content/uploads/2016/07/Jasmine-Output.png')
       section
         h2 Let’s Tool Up
         ul
@@ -134,14 +165,16 @@ html
         h2 Smoking Test
         
         ul
+          li The term “smoke test” comes from the olden days when if you wanted to see if a device was working, you could just plug it into the wall and if you smelled smoke, that was bad.
           li Just because all the pieces are accounted for doesn’t mean that the instructions are properly executable and will allow you to build the final model. 
-          li Tests go through your running application and ensure designated actions, user inputs and user flows are completable and functioning
+          
       
 
       section
         h2 Smoking Test
         
         ul
+          li Tests go through your running application and ensure designated actions, user inputs and user flows are completable and functioning
           li  We’re testing to see if a particular workflow (a sign-up flow) behaves as expected when we fill in some bad information.
           li  How does your user interact with your website, and what is the expected outcome of that interaction?
       
@@ -200,7 +233,8 @@ html
         ul
           li Gremlins.js
       section
-        h2 Visual Regression 
+        h2 Visual Regression
+
         h6 find differences game
         ul
           li  This doesn’t test your code, but rather compares the rendered result of your code – your interface – with the rendered version of your application in production, staging, or a pre-changed local environment. 
@@ -233,7 +267,7 @@ html
             });
       
       section
-        img(src='https://camo.githubusercontent.com/bd2fd498218cfbb9f7d417b05ef35e92272bde2f/68747470733a2f2f7261772e6769746875622e636f6d2f487564646c652f5068616e746f6d4353532f6d61737465722f726561646d655f6173736574732f696e74726f2d6578616d706c652e706e67')
+        img(src='https://cdn.css-tricks.com/wp-content/uploads/2015/11/output.png')
 
       section
         h2 Tools for Visual Regression 
@@ -254,18 +288,18 @@ html
         p Testing sites can be automated.
       
       section
-        h2 Grunt-perfbudget
-        p Grunt-perfbudget relies on the immensely useful <b>WebPageTest API</b> to enforce a budget.
-        img(src='http://rupl.github.io/frontend-testing/img/grunt-perfbudget-output.png' width='500' heigth='400')
-
-      section
         h2 Everything Passes
         img(src='https://camo.githubusercontent.com/afff1bea031e4312e07ee4d7b2d81c162216b098/687474703a2f2f7777772e6a616d657363727965722e636f6d2f696d672f706173732e706e67' width='500' heigth='400')
       
       section
         h2 Task Fails to Pass The Threshold
         img(src='https://camo.githubusercontent.com/7356c840ae8aa2ec8ed9aad94c9fe71f2ae91dfe/687474703a2f2f7777772e6a616d657363727965722e636f6d2f696d672f6661696c2e706e67' width='500' heigth='400')
-      
+
+      section
+        h2 Grunt-perfbudget
+        p Grunt-perfbudget relies on the immensely useful <b>WebPageTest API</b> to enforce a budget.
+        img(src='http://rupl.github.io/frontend-testing/img/grunt-perfbudget-output.png' width='500' heigth='400')
+
       section
         h2 Ghost Inspector
         p Ghost Inspector can record a user's actions as they browse normally, and turn those actions into Casper code.
@@ -291,10 +325,11 @@ html
           li Make it part of the workflow
           li Don’t do everything at once
           li Revisit and review
-
       
       section
-        h2 Questions and Thank you
+      
+      section
+        h2 Thank you
         a.speaker(href='https://twitter.com/NouranMhmoud') Nouran Mahmoud
         
         img(src='http://i.imgur.com/xmBjXcm.gif')

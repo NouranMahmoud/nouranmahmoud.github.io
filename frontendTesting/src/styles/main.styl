@@ -1,7 +1,7 @@
 // New to Stylus? Check out http://learnboost.github.io/stylus
 // Use modern CSS thanks to Autoprefixer: https://github.com/ai/autoprefixer
 
-@import 'https://fonts.googleapis.com/css?family=Merriweather|Lato:300|Atma|Baloo+Bhai|Boogaloo|Ceviche+One|Cinzel+Decorative|Dancing+Script|Expletus+Sans|Kaushan+Script|Knewave|Life+Savers|Nixie+One|Oregano|Pompiere|Sniglet';
+@import 'https://fonts.googleapis.com/css?family=Allura|Tangerine|Bad+Script|Merriweather|Lato:300|Atma|Baloo+Bhai|Boogaloo|Ceviche+One|Cinzel+Decorative|Dancing+Script|Expletus+Sans|Kaushan+Script|Knewave|Life+Savers|Nixie+One|Oregano|Pompiere|Sniglet';
 
 .bespoke-bullet
   opacity: 0
@@ -16,6 +16,50 @@
   &.bespoke-bullet-active
     opacity: 1
     transform: scale(1)
+
+body
+  background: rgb(240, 232, 237)
+
+.bespoke-slide:nth-child(1)
+  background: linear-gradient(45deg, #ffffff, #895075)
+
+  &:before
+    content: ""
+    position: absolute
+    width: 640px;
+    height: 480px;
+    border-radius: 30px;
+    background: url(/images/spot.png) no-repeat center
+    background-size: cover;
+    z-index: -1
+
+  p
+    font-family: 'Dancing script';
+    letter-spacing: 2px
+    font-size: 24px
+    line-height: 40px
+    color: #c06caa;
+
+  h1
+    margin: 80px 0 0 80px;
+    font-family: Oregano;
+    font-size: 30px;
+    text-shadow: 2px 2px 0 rgba(#004d3f, 0.4);
+    font-style: italic;
+    font-weight: normal;
+    text-shadow: 2px 2px 0 #c06caa, 3px 3px 0 #dba3d2
+
+    span
+      display: block;
+      font-family: 'Bad Script';
+      font-size: 100px;
+      letter-spacing: 0;
+      color: #fff;
+      text-shadow: 2px 2px 0 #c06caa, 4px 4px 0 #dba3d2
+      text-indent: -105px;
+      margin-top: -58px;
+      font-style: normal;
+
 
 .bespoke-slide:nth-child(2)
   background: linear-gradient(45deg, #43cea2 , #185a9d)
@@ -85,7 +129,7 @@
       margin: 30px
       list-style: none
 
-.bespoke-slide:nth-child(12)
+.bespoke-slide:nth-child(13)
   ul
     list-style: none
     text-align: center
@@ -102,14 +146,14 @@
       img
         max-width: 100px
 
-.bespoke-slide:nth-child(14)
+.bespoke-slide:nth-child(15)
   .code-snippet
     max-width: 90%;
     max-height: 330px;
     overflow: hidden
     overflow-y: scroll;
 
-.bespoke-slide:nth-child(15)
+.bespoke-slide:nth-child(16)
   ul
     list-style: none
     text-align: center
@@ -128,7 +172,7 @@
         border-radius: 4px
         max-width: 80px
 
-.bespoke-slide:nth-child(16)
+.bespoke-slide:nth-child(17)
   img
     margin: 0 auto
     max-width: 300px
@@ -158,8 +202,8 @@
       font-size: 24px
       margin-bottom: 10px
 
-.bespoke-slide:nth-child(17),
-.bespoke-slide:nth-child(18)
+.bespoke-slide:nth-child(18),
+.bespoke-slide:nth-child(19)
   ul
     list-style: none;
 
@@ -167,11 +211,11 @@
       margin-top: 20px
 
 
-.bespoke-slide:nth-child(19)
+.bespoke-slide:nth-child(20)
   > pre
     box-shadow: 0 20px 50px rgba(#000, 0.75)
 
-.bespoke-slide:nth-child(20)
+.bespoke-slide:nth-child(21)
   h2
     margin-top: 30px
 
@@ -182,7 +226,7 @@
   > pre
     overflow: hidden;
 
-.bespoke-slide:nth-child(21)
+.bespoke-slide:nth-child(22)
   ul
     list-style: none;
     text-align: center;
@@ -196,7 +240,7 @@
       border-radius: 5px
       max-width: 120px
 
-.bespoke-slide:nth-child(23)
+.bespoke-slide:nth-child(24)
   h2
     margin-top: 50px
 
@@ -205,12 +249,12 @@
     top: 40px
     max-width: 90%
 
-.bespoke-slide:nth-child(24)
+.bespoke-slide:nth-child(25)
   img
     max-width: 60%
     box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3)
 
-.bespoke-slide:nth-child(26)
+.bespoke-slide:nth-child(27)
   h2
     margin-top: 20px
 
@@ -226,11 +270,11 @@
     li
       margin-top: 30px
 
-.bespoke-slide:nth-child(27)
+.bespoke-slide:nth-child(28)
   h2
     margin: 15px 0 5px;
 
-.bespoke-slide:nth-child(29)
+.bespoke-slide:nth-child(30)
   ul
     margin: 0
     padding: 0 30px
@@ -243,7 +287,7 @@
         text-decoration: none;
         color: #fff
 
-.bespoke-slide:nth-child(32)
+.bespoke-slide:nth-child(31)
   p
     font-size: 18px
     line-height: 1.5
@@ -253,16 +297,16 @@
     font-size: 1em
     margin: 0
 
-.bespoke-slide:nth-child(33),
-.bespoke-slide:nth-child(34)
+.bespoke-slide:nth-child(34),
+.bespoke-slide:nth-child(35)
   h2
     margin: 30px 0 0
 
-.bespoke-slide:nth-child(36)
+.bespoke-slide:nth-child(37)
   h2
     margin: 30px 0 30px
 
-.bespoke-slide:nth-child(37)
+.bespoke-slide:nth-child(38)
   h2
     margin: 10px 0 30px
 
@@ -278,14 +322,14 @@
     li + li
       margin-top: 40px
 
-.bespoke-slide:nth-child(38)
+.bespoke-slide:nth-child(39)
   ul
     list-style: none
 
     li + li
       margin-top: 20px
 
-.bespoke-slide:nth-child(39)
+.bespoke-slide:nth-child(41)
   background: linear-gradient(45deg, #f74242,#510101);
 
   &:before
